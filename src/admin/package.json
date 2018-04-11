@@ -1,0 +1,41 @@
+{
+  "name": "fshigueru-base",
+  "version": "1.0.0",
+  "description": "base sistema page",
+  "private": true,
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production"
+  },
+  "keywords": [
+    "fshigueru",
+    "desenvolvimento de websites",
+    "sistemas"
+  ],
+  "author": "Filipe Shigueru <filipe.shigueru@yahoo.com.br>",
+  "license": "ISC",
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.17.0",
+    "bootstrap-sass": "^3.3.7",
+    "copy-webpack-plugin": "^4.5.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.7",
+    "uglifyjs-webpack-plugin": "^1.2.4",
+    "vue": "^2.5.16",
+    "vue-loader": "^14.2.1",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "4.0.0",
+    "chart.js": "2.7.1",
+    "datatables.net-bs4": "1.10.16",
+    "font-awesome": "4.7.0",
+    "jquery": "3.3.1",
+    "jquery.easing": "^1.4.1",
+    "jquery.tooltips": "^1.0.0",
+    "popper.js": "^1.14.1"
+  }
+}

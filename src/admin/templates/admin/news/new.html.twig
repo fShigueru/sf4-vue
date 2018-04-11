@@ -1,0 +1,14 @@
+{% extends 'admin/admin_base.html.twig' %}
+{% form_theme form 'form/fields.html.twig' %}
+
+{% block title %}Nova notícia{% endblock %}
+
+{% block body %}
+    {{ include('admin/elements/_breadcrumb.html.twig', {'menus': menus}) }}
+    <div class="row justify-content-center">
+        <div class="col-10">
+            {{ include('admin/news/_form.html.twig') }}
+            <a href="{{ path('admin_news_index') }}">Voltar a lista</a>
+        </div>
+    </div>
+{% endblock %}

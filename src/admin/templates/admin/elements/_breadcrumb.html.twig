@@ -1,0 +1,21 @@
+<ol class="breadcrumb">
+    {% if menus|last is iterable %}
+        {% set menu = menus|last %}
+        {% set lastMenu = menu.label %}
+    {% else %}
+        {# users is probably a string #}
+        {% set lastMenu = menus|last %}
+    {% endif %}
+
+    {% for key, menu in menus %}
+        {% if menu is iterable %}
+            <li class="breadcrumb-item {{ (menu.label in lastMenu) ? 'active' }}">
+                <a href="{{ url(key, {'id': menu.id}) }}">{{ menu.label }}</a>
+            </li>
+        {% else %}
+            <li class="breadcrumb-item {{ (menu in lastMenu) ? 'active' }}">
+                <a href="{{ url(key) }}">{{ menu }}</a>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ol>

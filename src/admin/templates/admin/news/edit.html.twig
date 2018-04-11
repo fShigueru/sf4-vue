@@ -1,0 +1,31 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block title %}Editar notícia - {{ news.title }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('build/css/news.css') }}">
+{% endblock %}
+
+{% block body %}
+    {{ include('admin/elements/_breadcrumb.html.twig', {'menus': menus}) }}
+    <div class="row justify-content-center">
+        <div class="col-10">
+            {{ include('message/message.html.twig') }}
+            {{ include('admin/news/_form.html.twig', {'button_label': 'Atualizar'}) }}
+            <div class="row">
+                <div class="col">
+                    <a href="{{ path('admin_news_index') }}">Voltar a lista</a>
+                </div>
+                <div class="col">
+                    {{ include('admin/news/_delete_form.html.twig') }}
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

@@ -1,0 +1,6 @@
+yokai_security_token:
+    tokens:
+        reset_password:
+            duration: +365 days
+            usages : 200
+            keep: +57 month

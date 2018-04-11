@@ -1,0 +1,21 @@
+{% extends "admin/login_base.html.twig" %}
+
+{% block body %}
+    <form class="form-signin" method="post" action="{{ path('login') }}">
+        <img src="{{ asset('build/static/admin/logo_footer.png') }}" alt="Sistema fshigueru">
+        {% if error %}
+            <div class="alert alert-danger">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+        <label for="inputEmail" class="sr-only">Username</label>
+        <input type="text" name="_username" id="username" value="{{ last_username }}" class="form-control" placeholder="Informe seu Username" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="_password" id="password" class="form-control" placeholder="Informe sua senha" required>
+        <input type="checkbox" id="remember_me" name="_remember_me" checked />
+        <label for="remember_me">Permanecer conectado</label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+        <p class="mt-5 mb-3 text-muted">&copy; Fshigueru 2018</p>
+    </form>
+
+{% endblock %}

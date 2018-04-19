@@ -14,4 +14,5 @@ fos_rest:
         enabled: true
         rules:
             - { path: '^/api', prefer_extension: true, fallback_format: json, priorities: [ json, html ] }
-            - { path: '^/admin', methods: ['GET', 'POST'], priorities: ['xml', 'html'], fallback_format: ~, prefer_extension: false }
+            - { path: '^/admin', methods: ['POST', 'PUT', 'GET', 'DELETE'], priorities: ['xml', 'html'], fallback_format: ~, prefer_extension: false }
+            - { path: '^/media', priorities: ['jpeg', 'gif', 'text/html', '*/*'], fallback_format: false, prefer_extension: true }

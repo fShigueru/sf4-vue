@@ -1,0 +1,27 @@
+@import "~bulma/bulma";
+@import "~bulma-extensions/dist/bulma-extensions.min.css";
+@import "hero";
+
+body {
+  //background-color: $dark;
+}
+.bg-default {
+  background-color: $dark;
+}
+.footer {
+  height: 400px;
+}
+.coluna {
+  background-color: $turquoise;
+}
+.footer {
+  background-color: $yellow;
+}
+.Masthead {
+  min-height: 20vh !important;
+}
+#gallery {
+  figure {
+    cursor: pointer;
+  }
+}

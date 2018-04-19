@@ -19,7 +19,7 @@
                         <div class="col">
                             <div class="card mb-3 float-left">
                                 <a href="{{ path('admin_news_edit', {'id': new.id}) }}">
-                                    <img src="{{ asset(path_news ~ 'capa/' ~ new.capa) | imagine_filter('thumb_new_dashboard') }}" />
+                                    <img src="{{ asset(path_news ~ 'capa/' ~ new.capa) | imagine_filter('thumb_dashboard_admin') }}" />
                                 </a>
                                 <div class="card-body">
                                     <h6 class="card-title mb-1"><a href="{{ path('admin_news_edit', {'id': new.id}) }}">{{ new.title }}</a></h6>

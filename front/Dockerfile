@@ -31,5 +31,7 @@ RUN npm install create-react-app -g
 
 RUN npm install -g vue-cli
 
+RUN npm install -g create-nuxt-app
+
 EXPOSE 3000
 EXPOSE 35729

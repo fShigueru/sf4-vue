@@ -39,11 +39,11 @@ class NewsController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            $capa = $news->getCapa();
-            $fileName = $fileUploader->upload($capa, $this->pathUpload);
-            $news->setCapa($fileName);
-
+            if (!empty($news->getCapa())) {
+                $capa = $news->getCapa();
+                $fileName = $fileUploader->upload($capa, $this->pathUpload);
+                $news->setCapa($fileName);
+            }
             $em = $this->getDoctrine()->getManager();
             $em->persist($news);
             try {
@@ -82,14 +82,20 @@ class NewsController extends Controller
      */
     public function edit(Request $request, News $news, FileUploader $fileUploader): Response
     {
+        $capaPath = $news->getCapa();
+
         $form = $this->createForm(NewsType::class, $news);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             try {
-                $capa = $news->getCapa();
-                $fileName = $fileUploader->upload($capa, $this->pathUpload);
-                $news->setCapa($fileName);
+                if (!empty($news->getCapa())) {
+                    $capa = $news->getCapa();
+                    $fileName = $fileUploader->upload($capa, $this->pathUpload);
+                    $news->setCapa($fileName);
+                } else {
+                    $news->setCapa($capaPath);
+                }
 
                 $this->getDoctrine()->getManager()->flush();
                 $this->addFlash(

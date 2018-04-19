@@ -19,4 +19,5 @@ return [
     Yokai\SecurityTokenBundle\YokaiSecurityTokenBundle::class => ['all' => true],
     Nelmio\ApiDocBundle\NelmioApiDocBundle::class => ['all' => true],
     HarmBandstra\SwaggerUiBundle\HBSwaggerUiBundle::class => ['dev' => true],
+    Nelmio\CorsBundle\NelmioCorsBundle::class => ['all' => true],
 ];

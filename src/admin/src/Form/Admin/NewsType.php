@@ -25,7 +25,7 @@ class NewsType extends AbstractType
                 ]
             )
             ->add('description', TextareaType::class, ['label' => 'Descrição', 'attr' => ['class' => 'form-control']])
-            ->add('capa', FileType::class, ['data_class' => null])
+            ->add('capa', FileType::class, ['data_class' => null, 'required' => false])
         ;
     }
 

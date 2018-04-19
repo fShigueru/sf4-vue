@@ -2,6 +2,11 @@ liip_imagine:
     resolvers:
         default:
             web_path: ~
+        profile_photos:
+            web_path:
+              # use %kernel.project_dir%/web for Symfony prior to 4.0.0
+              web_root: "%kernel.project_dir%/public"
+              cache_prefix: "media/cache"
 
     filter_sets:
         cache: ~
@@ -32,7 +37,7 @@ liip_imagine:
                 # 4px larger to create a 2px border around the final image
                 background: { size: [304, 217], position: center, color: '#dee2e6' }
 
-        thumb_new_dashboard:
+        thumb_dashboard_admin:
             quality: 75
             filters:
                 thumbnail: { size: [232, 162], mode: outbound }

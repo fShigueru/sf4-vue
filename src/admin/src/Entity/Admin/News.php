@@ -41,7 +41,6 @@ class News
      * @var string
      *
      * @ORM\Column(type="string")
-     * @Assert\NotBlank(message="Selecione uma imagem para a capa")
      * @Assert\Image(
      *     mimeTypes={"image/*"},
      *     mimeTypesMessage="Arquivo inválido!"

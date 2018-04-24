@@ -2,7 +2,6 @@ const pkg = require('./package')
 
 module.exports = {
   mode: 'universal',
-
   /*
   ** Headers of the page
   */
@@ -21,7 +20,12 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#3B8070' },
+  //loading: '~/components/loading.vue',
+  loading: false,
+  transition: {
+    name: 'page',
+    mode: 'out-in'
+  },
 
   manifest: {
     name: 'My Nuxt App Fshigueru',
@@ -32,6 +36,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '@/assets/scss/style.scss'
   ],
 
   /*
@@ -39,7 +44,8 @@ module.exports = {
   */
   plugins: [
     { src: '~/plugins/vue-gallery', ssr: false },
-    { src: '~/plugins/vue-parallaxy', ssr: false }
+    { src: '~/plugins/vue-parallaxy', ssr: false },
+    { src: '~/plugins/vue-quick-menu', ssr: false },
   ],
   /*
   ** Nuxt.js modules
@@ -72,7 +78,7 @@ module.exports = {
         'postcss-custom-properties': false
       }
     },
-    vendor: ['vue-gallery', 'vue-parallaxy', 'aos']
+    vendor: ['vue-gallery', 'vue-parallaxy', 'aos', 'vue-quick-menu']
   },
 
   proxy: {

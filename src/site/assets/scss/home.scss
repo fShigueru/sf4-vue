@@ -1,0 +1,57 @@
+@import "~bulma/bulma";
+@import "~bulma-extensions/dist/bulma-extensions.min.css";
+@import "hero";
+
+.quick-menu-home {
+  .quick-menu {
+    z-index: 30;
+    top: 80px !important;
+    left: 15px !important;
+  }
+  .quick-menu>.menu .core-menu .bar, .quick-menu>.menu .core-menu .bar:after, .quick-menu>.menu .core-menu .bar:before {
+    background-color: $dark;
+  }
+}
+#carousel {
+  .hero-carousel .carousel-container .carousel-item .title {
+    background: rgba($yellow, 0.9);
+  }
+  .carousel-navigation {
+    .carousel-nav-left {
+      background-color: $yellow !important;
+    }
+    .carousel-nav-right {
+      background-color: $yellow !important;
+    }
+  }
+}
+
+.features-history {
+  padding: 20px 0;
+  margin-top: 0;
+  margin-bottom: 0 !important;
+  background: rgba(#0a0a0a, 0.7);
+  .tag:not(body).is-primary {
+    background-color: $yellow;
+    color: $dark;
+  }
+  .timeline {
+    margin-bottom: 3em;
+  }
+  .timeline .timeline-item .timeline-marker.is-primary {
+    background-color: $yellow !important;
+    border-color: $yellow !important;
+  }
+  .timeline .timeline-item {
+    .icon.is-medium {
+      height: 1.8em;
+      width: 1.8em;
+    }
+  }
+  .intro {
+    padding: 4em 0 3em 0;
+  }
+  .timeline-content p {
+    color: $white;
+  }
+}

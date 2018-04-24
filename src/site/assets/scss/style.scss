@@ -2,26 +2,91 @@
 @import "~bulma-extensions/dist/bulma-extensions.min.css";
 @import "hero";
 
-body {
-  //background-color: $dark;
+div {
+  margin-right: 0 !important;
 }
+
+.logo {
+  height: 30px
+}
+
 .bg-default {
   background-color: $dark;
-}
-.footer {
-  height: 400px;
+  .is-divider {
+    z-index: 1;
+    margin: 0;
+    border-color: $yellow;
+  }
+  .is-divider-vertical[data-content]::after, .is-divider[data-content]::after {
+    background-color: $dark;
+    color: $yellow;
+  }
 }
 .coluna {
   background-color: $turquoise;
 }
 .footer {
-  background-color: $yellow;
+  height: 400px;
+  background:
+          /* top, transparent red, faked with gradient */
+          linear-gradient(
+                rgba($yellow, 0.90),
+                rgba($yellow, 0.90)
+          ),
+            /* bottom, image */
+          url("./../../static/bg-academia.png")
+           center scroll;
+;
+}
+.menu-list a:hover {
+  background-color: $dark !important;
+  color: $yellow !important;
 }
 .Masthead {
-  min-height: 20vh !important;
+  min-height: 0 !important;
 }
 #gallery {
   figure {
     cursor: pointer;
   }
 }
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
+}
+nav.navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+.quickview {
+  z-index: 99;
+  .section {
+    padding-top: 0.8em;
+  }
+  header {
+    background-color: $yellow;
+  }
+  footer {
+    background-color: $dark;
+    button{
+      width: 7em;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .navbar-menu {
+      background-color: $yellow !important;
+      a.navbar-item.is-active {
+        color: yellow;
+        background-color: $dark;
+      }
+  }
+}
+
+.m-r-md { margin-right: 1rem !important; }

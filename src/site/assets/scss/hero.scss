@@ -25,7 +25,7 @@
   margin-bottom: 2rem;
 }
 .intro {
-  padding: 3rem 0 0 0;
+  padding: 5rem 0 0 0;
   text-align: center;
   h2.title {
     color: $yellow;
@@ -62,4 +62,8 @@
 
 .is-shady:hover {
   box-shadow: 0 10px 16px rgba(0, 0, 0, .13), 0 6px 6px rgba(0, 0, 0, .19);
+}
+
+#gallery figure img{
+  border: 3px solid hsl(48, 100%, 67%);
 }

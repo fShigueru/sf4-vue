@@ -1,0 +1,56 @@
+@import "~bulma/bulma";
+
+#news {
+  .section-breadcrumb {
+    padding: 0 1.5rem;
+  }
+  .hero.intro{
+    height: 9em;
+  }
+}
+
+#ListNews {
+  .columns {
+    .column > div {
+      border: 3px solid $yellow;
+      border-radius: 4px;
+    }
+    .column div div {
+      width: 100%;
+      height: 275px;
+      background-color: rgba($black, 0.80) !important;
+      display: block;
+      z-index: 1;
+      h2, h3, p {
+        color: $white;
+      }
+      h2 {
+        padding: 0.5em 0.5em 0 0.5em;
+      }
+      h3 {
+        padding: 0 0.7em 0 0.7em;
+      }
+      p {
+        padding: 0 1.2em 0 1.2em;
+      }
+      section {
+        position: relative;
+        top: 40px;
+        right: 20px;
+      }
+      $breakpoint-tablet: 768px;
+      @media screen and (max-width: $breakpoint-tablet){
+        section {
+          top: 13px;
+        }
+      }
+    }
+    .column div div:hover {
+      background-color: rgba($yellow, 0.90) !important;
+      h2, h3, p {
+        color: $black;
+      }
+    }
+  }
+}
+

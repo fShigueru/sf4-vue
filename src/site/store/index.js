@@ -1,15 +1,21 @@
 import Vuex from 'vuex'
+import vuexCache from 'vuex-cache'
 import { News } from './../entity/News'
 
 
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      news: []
+      news: [],
+      error: ''
     },
+    plugins: [vuexCache],
     mutations: {
       'set-news'(state, news){
         state.news = news;
+      },
+      'set-error'(state, error){
+        state.error = error;
       }
     },
     actions: {
@@ -26,6 +32,11 @@ const createStore = () => {
             )
           );
           context.commit('set-news', news);
+
+        }).catch(error => {
+          if (error.data == undefined) {
+            context.commit('set-error', 'Aguarde...');
+          }
         });
       }
     }

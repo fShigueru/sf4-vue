@@ -1,48 +1,55 @@
 <template>
     <div id="news">
-        <section class="hero is-primary is-medium intro">
-            <div class="div clasy">
-                <div class="container">
-                    <div class="intro-columns">
-                        <div class="intro-content animated flipInX">
-                            <h1 class="title" >
-                                {{ title }}
-                            </h1>
-                            <h2 class="subtitle">
-                                Primary subtitle
-                            </h2>
+        <div class="bg-default">
+            <section class="hero is-warning is-medium intro">
+                <div class="div clasy">
+                    <div class="container">
+                        <div class="intro-columns">
+                            <div class="intro-content animated flipInX">
+                                <h1 class="title" data-aos="zoom-in">
+                                    {{ title }}
+                                </h1>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <progress class="progress is-danger" value="78" max="100">90%</progress>
-        </section>
-        <div class="container">
-            <section class="section">
-                <div class="columns is-custom">
-                    <div v-for="n in news" class="column coluna">
-                        <h2 class="is-size-2.5">
-                            {{ n.title }}
-                            <span class="tag is-danger is-small">
-                                World
-                                <button class="delete"></button>
-                            </span>
-                        </h2>
-                        <figure class="image is-128x128">
-                            <img :src="n.capa" alt="">
-                        </figure>
-                        <a class="button is-info hvr-grow">
-                            Button
-                            <i class="material-icons">3d_rotation</i>
-                        </a>
-                    </div>
-                </div>
             </section>
+            <div class="container">
+                <section class="section section-breadcrumb">
+                    <nav class="breadcrumb" aria-label="breadcrumbs">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                <span class="icon is-small">
+                                  <i class="fa fa-home" aria-hidden="true"></i>
+                                </span>
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <span class="icon is-small">
+                                  <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                </span>
+                                    <span>Notícias</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
+            </div>
+            <div class="container">
+            <section class="section">
+                <NewsList />
+            </section>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+ import NewsList from '~/components/NewsList.vue'
+ import './../assets/scss/news.scss'
   export default {
     name: 'news',
     data () {
@@ -50,13 +57,17 @@
         title: 'Notícias'
       }
     },
-    computed: {
-      news(){
-        return this.$store.state.news
-      }
+    components: {
+      NewsList
     },
-    created(){
-      this.$store.dispatch('load-news');
+    metaInfo: {
+      titleTemplate: '%s ← Notícias',
+      meta: [
+        { vmid: 'description', name: 'description', content: 'Notícias do site base' },
+        { itemprop: 'name', content: 'Fshigueru base ← Notícias' },
+        { itemprop: 'description', content: 'Notícias do site base' },
+        { itemprop: 'image', content: '' }
+      ]
     }
   }
 </script>

@@ -1,0 +1,60 @@
+@import "~bulma/bulma";
+
+#localizacao {
+  .section-breadcrumb {
+    padding: 0 1.5rem;
+  }
+
+  .columns {
+    .column {
+      .card {
+        width: 100%;
+        .card-image > .fa {
+          font-size: 4rem;
+          padding-top: 2rem;
+          padding-bottom: 0;
+          color: $dark;
+        }
+      }
+    }
+  }
+
+  section.content {
+    background: rgba($white, 10);
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    border-radius: 4px;
+    h2, p {
+      color: $dark;
+      padding: 1em 2em 1em 2em;
+    }
+    strong {
+      color: $white;
+    }
+  }
+  .columns.features {
+    padding: 1.7em 0;
+  }
+
+  $breakpoint-tablet: 768px;
+  @media screen and (max-width: $breakpoint-tablet){
+    .hero {
+      .container {
+        margin: 0 5px !important;
+        .columns.features {
+          .column {
+            .card {
+              margin: 0.4em;
+            }
+          }
+        }
+        .card-content {
+          .content {
+            margin: 0;
+          }
+
+        }
+      }
+    }
+  }
+}

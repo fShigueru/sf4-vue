@@ -45,7 +45,7 @@ class NewsController extends FOSRestController
     public function index(AuthorizationCheckerInterface $authChecker)
     {
         $em = $this->getDoctrine()->getManager();
-        $news = $em->getRepository(News::class)->findAll();
+        $news = $em->getRepository(News::class)->findLatest(6);
         return $this->json(['data' => $news, 'status' => 200, 'path_image' => '/uploads/news/capa/']);
     }
 

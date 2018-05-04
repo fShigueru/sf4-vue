@@ -82,37 +82,26 @@
                 <br />
             </section>
         </div>
-        <QuickView/>
     </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
 import Carousel from '~/components/Carousel.vue'
 import Gallery from '~/components/Gallery.vue'
 import Parallaxy from '~/components/Parallaxy.vue'
-import QuickView from '~/components/QuickView.vue'
 import './../assets/scss/home.scss'
 import './../assets/js/scroll'
-import 'aos/dist/aos.css'
-
 
 export default {
   name: 'home',
   components: {
-    Logo,
     Carousel,
     Gallery,
-    Parallaxy,
-    QuickView
+    Parallaxy
   },
   created () {
     if (process.browser) {
-      const AOS = require('aos')
-      AOS.init();
-    }
-    if (process.browser) {
-      window.addEventListener('load', function () {
+      window.addEventListener('DOMContentLoaded', function () {
         let element = document.getElementsByClassName("quick-menu");
         element[0].children[3].children[0].addEventListener("click", function(){
             document.getElementById("btn-contact").click();
@@ -126,23 +115,11 @@ export default {
             })
           }
         }
-
-        let navMenu = document.getElementsByClassName('navbar-start');
-        let navEl = navMenu[0].children;
-        for (let key in navEl) {
-          if (Number.isInteger(navEl[key]) === false) {
-            if (navEl[key] && {}.toString.call(navEl[key]) !== '[object Function]') {
-              navEl[key].addEventListener("click", function(){
-                document.getElementsByClassName("navbar-menu")[0].classList.remove("is-active");
-                document.getElementsByClassName("navbar-burger")[0].classList.remove("is-active");
-              })
-            }
-          }
-        }
       })
     }
   },
-  mounted () {
+  method() {
+
   },
   data (context) {
     return {
@@ -156,7 +133,15 @@ export default {
       },
       fixed: true
     }
+  },
+  metaInfo: {
+    titleTemplate: '%s ← Home',
+    meta: [
+      { vmid: 'description', name: 'description', content: 'Home do site base' },
+      { itemprop: 'name', content: 'Fshigueru base ← Home' },
+      { itemprop: 'description', content: 'Home do site base' },
+      { itemprop: 'image', content: '' }
+    ]
   }
-
 }
 </script>

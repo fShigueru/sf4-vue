@@ -25,7 +25,7 @@
   margin-bottom: 2rem;
 }
 .intro {
-  padding: 5rem 0 0 0;
+  padding: 5rem 0 0 0 !important;
   text-align: center;
   h2.title {
     color: $yellow;
@@ -54,6 +54,14 @@
 }
 .is-shady:hover {
   background: hsl(48, 100%, 67%);
+}
+
+.is-shady > .card-image > .fa {
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -ms-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
 }
 
 .is-shady:hover > .card-image > .fa  {

@@ -25,7 +25,7 @@ class NewsController extends Controller
     {
         return $this->render('admin/news/index.html.twig', [
             'menus' => ['admin_news_index' => 'Notícias / Listar'],
-            'news' => $newsRepository->findAll()
+            'news' => $newsRepository->findBy([], ['id' => 'DESC'])
         ]);
     }
 

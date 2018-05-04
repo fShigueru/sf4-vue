@@ -1,5 +1,10 @@
 <template>
-    <div class="hero bg-parallax" style="position: relative;">
+    <div class="hero bg-parallax" >
+        <no-ssr>
+            <Parallaxy :parallax="true" :fixed="fixed" :speedFactor="0.10" :sectionHeight="0">
+                <img :src="img" alt="very cool bg">
+            </Parallaxy>
+        </no-ssr>
         <div class="columns features features-history" id="historia">
             <div class="column is-4"></div>
             <div class="column is-4">
@@ -11,11 +16,6 @@
             <div class="column is-4">
             </div>
         </div>
-        <no-ssr>
-            <Parallaxy :parallax="true" :fixed="fixed" :speedFactor="0.10" :sectionHeight="0">
-                <img :src="img" alt="very cool bg">
-            </Parallaxy>
-        </no-ssr>
     </div>
 </template>
 

@@ -1,19 +1,23 @@
 @import "~bulma/bulma";
 @import "~bulma-extensions/dist/bulma-extensions.min.css";
 @import "hero";
-
-div {
-  margin-right: 0 !important;
-}
+@import "~aos/dist/aos.css";
 
 .logo {
-  height: 30px
+  height: 123px
+}
+
+.section-breadcrumb {
+  padding: 0 1.5rem;
+}
+.hero.intro{
+  height: 9em;
 }
 
 .bg-default {
   background-color: $dark;
   .is-divider {
-    z-index: 1;
+    z-index: 3;
     margin: 0;
     border-color: $yellow;
   }
@@ -83,10 +87,65 @@ nav.navbar {
   .navbar-menu {
       background-color: $yellow !important;
       a.navbar-item.is-active {
-        color: yellow;
+        color: $yellow;
         background-color: $dark;
       }
   }
 }
-
+$breakpoint-tablet: 768px;
+@media screen and (max-width: $breakpoint-tablet){
+  .footer {height: 687px};
+  div {
+    margin-right: 0 !important;
+  }
+}
 .m-r-md { margin-right: 1rem !important; }
+.is-390 { width: 390px; height: auto !important;}
+.breadcrumb a {
+  color: $yellow !important;
+}
+.breadcrumb a:hover {
+  color: $white !important;
+}
+.breadcrumb li + li::before {
+  color: $yellow !important;
+}
+
+.features-history {
+  position: relative;
+  padding: 20px 0;
+  margin-top: 0;
+  margin-bottom: 0 !important;
+  background: rgba(#0a0a0a, 0.7);
+  .tag:not(body).is-primary {
+    background-color: $yellow;
+    color: $dark;
+  }
+  .timeline {
+    margin-bottom: 3em;
+  }
+  .timeline .timeline-item .timeline-marker.is-primary {
+    background-color: $yellow !important;
+    border-color: $yellow !important;
+  }
+  .timeline .timeline-item {
+    .icon.is-medium {
+      height: 1.8em;
+      width: 1.8em;
+    }
+  }
+  .intro {
+    padding: 4em 0 3em 0 !important;
+  }
+  .timeline-content p {
+    color: $white;
+  }
+}
+#historia {
+  margin-top: 0;
+}
+.navbar-item {
+  img {
+    max-height: 100% !important;
+  }
+}

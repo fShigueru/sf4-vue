@@ -3,6 +3,10 @@
 @import "hero";
 @import "~aos/dist/aos.css";
 
+.spinner {
+  background-color: $dark !important;
+}
+
 .logo {
   height: 123px
 }
@@ -80,6 +84,16 @@ nav.navbar {
     button{
       width: 7em;
     }
+  }
+}
+
+#quickviewButton {
+  a {
+    padding: 0.9rem 1rem;
+    line-height: 1.5;
+  }
+  a:hover {
+    background-color: #ffd83d;
   }
 }
 

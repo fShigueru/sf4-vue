@@ -9,7 +9,6 @@
                     <img :src="image" @click="index = imageIndex" :style="{'z-index': '99' }" class="hvr-hang">
                 </figure>
             </div>
-
         </div>
     </div>
 </template>

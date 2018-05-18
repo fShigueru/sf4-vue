@@ -18,7 +18,7 @@
                         <nuxt-link to="/news" class="navbar-item m-r-md" v-bind:class="[{'is-active': navmenu.news}]">Notícias</nuxt-link>
                         <nuxt-link to="/about" class="navbar-item m-r-md" v-bind:class="[{'is-active': navmenu.about}]">Quem somos</nuxt-link>
                         <nuxt-link to="/address" class="navbar-item m-r-md" v-bind:class="[{'is-active': navmenu.address}]">Localização</nuxt-link>
-                        <a href="javascript://Contato" data-show="quickview" data-target="quickviewDefault" id="btn-contact" class="navbar-item m-r-md">Contact</a>
+                        <QuickViewButton />
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                                         <li><nuxt-link to="/news">Notícias</nuxt-link></li>
                                         <li><nuxt-link to="/about">Quem somos</nuxt-link></li>
                                         <li><nuxt-link to="/address">Localização</nuxt-link></li>
-                                        <li><a href="javascript://Contato" data-show="quickview" data-target="quickviewDefault" id="btn-contact" class="navbar-item m-r-md">Contact</a></li>
+                                        <li><a href="javascript://Contato" data-show="quickview" data-target="quickviewDefault" id="btn-contact" class="navbar-item m-r-md">Contato</a></li>
                                     </ul>
                                 </aside>
                             </div>
@@ -90,12 +90,13 @@
                 </div>
             </div>
         </div>
-        <QuickView/>
+        <QuickView />
     </section>
 </template>
 
 <script>
   import QuickView from '~/components/QuickView.vue'
+  import QuickViewButton from '~/components/QuickViewButton.vue'
 
   if (process.browser) {
     const AOS = require('aos')
@@ -106,6 +107,7 @@
   }
   export default {
     name: 'app',
+    quickActive: true,
     data () {
       return {
         showNav: false,
@@ -123,7 +125,8 @@
       }
     },
     components: {
-      QuickView
+      QuickView,
+      QuickViewButton
     },
     created () {
       this.navmenu[this.$route.name] = true;

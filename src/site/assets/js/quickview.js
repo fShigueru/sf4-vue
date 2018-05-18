@@ -25,7 +25,7 @@ if (process.browser) {
     return null;
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('load', function (e) {
     // Get all document sliders
     var showQuickview = document.querySelectorAll('[data-show="quickview"]');
     [].forEach.call(showQuickview, function (show) {

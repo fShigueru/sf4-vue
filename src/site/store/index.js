@@ -1,9 +1,10 @@
 import Vuex from 'vuex'
 import vuexCache from 'vuex-cache'
 import { News } from './../entity/News'
-
+import newsjs from './../data/news.json'
 
 const createStore = () => {
+  //const authorsPromise = process.BROWSER_BUILD ? System.import('~/data/news.json') : Promise.resolve(require('~/data/news.json'))
   return new Vuex.Store({
     state: {
       news: [],
@@ -32,10 +33,18 @@ const createStore = () => {
             )
           );
           context.commit('set-news', news);
-
         }).catch(error => {
           if (error.data == undefined) {
-            context.commit('set-error', 'Aguarde...');
+            let path = newsjs.path_image;
+            let news = newsjs.data.map(element =>
+              new News(
+                element.id,
+                element.title,
+                element.description,
+                'http://localhost:8080' + path + element.capa
+              )
+            );
+            context.commit('set-news', news);
           }
         });
       }

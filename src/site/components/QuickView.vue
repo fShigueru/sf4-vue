@@ -1,52 +1,39 @@
 <template>
     <div id="quickview">
-        <div id="quickviewDefault" class="quickview">
+        <div id="quickviewDefault" class="quickview" v-bind:class="{ 'is-active': quickActive}">
             <header class="quickview-header">
-                <p class="title"></p>
-                <span class="delete" data-dismiss="quickview"></span>
+                <p class="title">
+                    Dúvidas? entre em contato :)
+                </p>
+                <span class="delete" v-on:click="quickViewHide" data-dismiss="quickview"></span>
             </header>
             <div class="quickview-body">
                 <div class="section">
                     <div class="quickview-block">
                         <div class="field">
-                            <label class="label">Name</label>
-                            <div class="control">
-                                <input class="input" type="text" placeholder="Text input">
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label">Username</label>
+                            <label class="label">Nome</label>
                             <div class="control has-icons-left has-icons-right">
-                                <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+                                <input class="input" type="text" placeholder="Nome">
                                 <span class="icon is-small is-left">
-                                <i class="fa fa-user"></i>
-                            </span>
-                                <span class="icon is-small is-right">
-                                <i class="fa fa-check"></i>
-                            </span>
+                                    <i class="fa fa-user"></i>
+                                </span>
                             </div>
-                            <p class="help is-success">This username is available</p>
                         </div>
 
                         <div class="field">
-                            <label class="label">Email</label>
+                            <label class="label">E-mail</label>
                             <div class="control has-icons-left has-icons-right">
-                                <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+                                <input class="input" type="email" placeholder="E-mail">
                                 <span class="icon is-small is-left">
-                              <i class="fa fa-envelope"></i>
-                            </span>
-                                <span class="icon is-small is-right">
-                              <i class="fa fa-exclamation-triangle"></i>
-                            </span>
+                                    <i class="fa fa-envelope"></i>
+                                </span>
                             </div>
-                            <p class="help is-danger">This email is invalid</p>
                         </div>
 
                         <div class="field">
-                            <label class="label">Message</label>
+                            <label class="label">Mensagem</label>
                             <div class="control">
-                                <textarea class="textarea" placeholder="Textarea"></textarea>
+                                <textarea class="textarea" placeholder="Mensagem"></textarea>
                             </div>
                         </div>
                     </div>
@@ -63,17 +50,29 @@
                 </div>
             </footer>
         </div>
-        <!--
-        <button class="button is-primary" data-show="quickview" data-target="quickviewDefault">
-            Show quickview
-        </button>
-        -->
     </div>
 </template>
 
 <script>
-  import './../assets/js/quickview'
   export default {
     name: 'quickview',
+    data () {
+      return {
+        quickActive: false
+      }
+    },
+    methods: {
+      quickViewHide: function () {
+        this.$el.querySelector('.quickview').classList.remove('is-active');
+      }
+    }
   }
 </script>
+<style lang="scss">
+.quickview-header {
+    .title {
+        margin: 0;
+        font-weight: 400;
+    }
+}
+</style>

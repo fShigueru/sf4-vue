@@ -24,6 +24,13 @@
 <script>
   export default {
     name: 'ListNews',
+    /*
+    async data ({ req }) {
+      let authors = await authorsPromise
+      console.log(authors)
+      return { authors }
+    },
+    */
     computed: {
       news(){
         if (this.$store.state.error.length > 0) {

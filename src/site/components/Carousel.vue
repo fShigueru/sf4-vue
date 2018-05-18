@@ -32,7 +32,7 @@
 </template>
 <script>
   if (process.browser) {
-    const bulmaCarousel = require('bulma-extensions/bulma-carousel/dist/bulma-carousel')
+    require('bulma-extensions/bulma-carousel/dist/bulma-carousel')
   }
   export default {
     name: 'carousel',

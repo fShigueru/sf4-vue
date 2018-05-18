@@ -13,7 +13,7 @@
                 </scrollactive>
             </div>
         </no-ssr>
-        <carousel/>
+        <vue-agile />
         <div class="bg-default" id="conceito">
             <div class="intro column is-8 is-offset-2">
                 <h2 class="title">Conceito</h2><br>
@@ -82,11 +82,14 @@
                 <br />
             </section>
         </div>
+        <!-- sibling elements will be set to margin-left:240px for `fixed` and `is-fixed=true` -->
     </div>
 </template>
 
 <script>
 import Carousel from '~/components/Carousel.vue'
+import VueCarousel from '~/components/VueCarousel.vue'
+import VueAgile from '~/components/VueAgile.vue'
 import Gallery from '~/components/Gallery.vue'
 import Parallaxy from '~/components/Parallaxy.vue'
 import './../assets/scss/home.scss'
@@ -97,16 +100,13 @@ export default {
   components: {
     Carousel,
     Gallery,
-    Parallaxy
+    Parallaxy,
+    VueCarousel,
+    VueAgile
   },
   created () {
     if (process.browser) {
-      window.addEventListener('DOMContentLoaded', function () {
-        let element = document.getElementsByClassName("quick-menu");
-        element[0].children[3].children[0].addEventListener("click", function(){
-            document.getElementById("btn-contact").click();
-        });
-
+      window.addEventListener('load', function () {
         let el = document.getElementsByClassName("sub-menu");
         for (let key in el) {
           if (el[key].children !== undefined) {
@@ -125,9 +125,9 @@ export default {
     return {
       img: 'https://st2.depositphotos.com/1029143/10762/v/950/depositphotos_107629244-stock-illustration-pattern-with-flowers-and-leaves.jpg',
       quickMenu: {
-        count: 4,
-        list: ['#conceito','#galeria' ,'#historia' ,'#contato'],
-        icons: ['fa fa-users', 'fa fa-picture-o', 'fa fa-history', 'fa fa-envelope-o'],
+        count: 3,
+        list: ['#conceito','#historia' ,'#galeria'],
+        icons: ['fa fa-users', 'fa fa-history', 'fa fa-picture-o'],
         bg: 'hsl(48, 100%, 67%)',
         color: 'hsl(0, 0%, 4%)'
       },
